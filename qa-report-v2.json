@@ -1,0 +1,445 @@
+{
+  "summary": {
+    "ps": 85,
+    "fs": 0,
+    "ws": 2
+  },
+  "results": [
+    {
+      "s": "PASS",
+      "t": "Title",
+      "n": "Sheggar Wheels | Addis Ababa Car Rental"
+    },
+    {
+      "s": "PASS",
+      "t": "Hero H1",
+      "n": "Sheger Wheels"
+    },
+    {
+      "s": "PASS",
+      "t": "3D spotlight card visible",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Spotlight tabs",
+      "n": "4"
+    },
+    {
+      "s": "PASS",
+      "t": "3D card link",
+      "n": "/cars/car_4"
+    },
+    {
+      "s": "PASS",
+      "t": "Featured grid",
+      "n": "4 cards"
+    },
+    {
+      "s": "PASS",
+      "t": "Homepage search filters",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Navbar /cars link",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Footer visible",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "6 car cards",
+      "n": "6"
+    },
+    {
+      "s": "PASS",
+      "t": "Keyword filter",
+      "n": "3 Toyota results"
+    },
+    {
+      "s": "PASS",
+      "t": "Empty state shown",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "All sort options work",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "car_1 page loads",
+      "n": "Toyota Corolla EX"
+    },
+    {
+      "s": "PASS",
+      "t": "car_1 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_2 page loads",
+      "n": "Hyundai Tucson SUV"
+    },
+    {
+      "s": "PASS",
+      "t": "car_2 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_3 page loads",
+      "n": "Toyota Vitz hatchback"
+    },
+    {
+      "s": "PASS",
+      "t": "car_3 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_4 page loads",
+      "n": "Ford Ranger Double Cab"
+    },
+    {
+      "s": "PASS",
+      "t": "car_4 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_5 page loads",
+      "n": "Suzuki Dzire Sedan"
+    },
+    {
+      "s": "PASS",
+      "t": "car_5 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_6 page loads",
+      "n": "Toyota Land Cruiser V8"
+    },
+    {
+      "s": "PASS",
+      "t": "car_6 map",
+      "n": "12 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "car_8 page loads",
+      "n": "Nissan Patrol"
+    },
+    {
+      "s": "PASS",
+      "t": "car_8 map",
+      "n": "8 tiles, marker✓, 750×288px"
+    },
+    {
+      "s": "PASS",
+      "t": "Map lifecycle car→car→back",
+      "n": "8→8→8 tiles"
+    },
+    {
+      "s": "PASS",
+      "t": "Invalid car ID → not-found",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Pending car_7 → not-found (correct)",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Hard refresh car detail",
+      "n": "Hyundai Tucson SUV"
+    },
+    {
+      "s": "PASS",
+      "t": "Renter sign-in buttons",
+      "n": "4"
+    },
+    {
+      "s": "PASS",
+      "t": "Renter → /dashboard",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Signed-out /dashboard → /signin",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "?next= redirect after sign-in",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Owner → /owner",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Admin → /admin",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Price calc shows",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "→ /checkout",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Checkout page content valid",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Unauth booking → /signin",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Empty date validation",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner",
+      "n": "Welcome, Dawit Kebede (Fleet Owner)"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner/cars",
+      "n": "Your Car Listings"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner/earnings",
+      "n": "Earnings & Financial Reports"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner/reviews",
+      "n": "Renter Reviews & Replies"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner/disputes",
+      "n": "Rental disputes"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner /owner/cars/new",
+      "n": "List New Car"
+    },
+    {
+      "s": "PASS",
+      "t": "New car form has fields",
+      "n": "7 inputs"
+    },
+    {
+      "s": "PASS",
+      "t": "Owner car edit page loads",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin",
+      "n": "Platform Administration"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/users",
+      "n": "Demo accounts"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/listings",
+      "n": "Listing moderation"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/bookings",
+      "n": "All bookings"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/disputes",
+      "n": "Dispute queue"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/reports",
+      "n": "Platform reports"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin /admin/announcements",
+      "n": "Announcements"
+    },
+    {
+      "s": "PASS",
+      "t": "Admin user detail page",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Pending car shown in admin listings",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Signup heading",
+      "n": "Create Renter Account"
+    },
+    {
+      "s": "PASS",
+      "t": "Signup inputs",
+      "n": "3 fields"
+    },
+    {
+      "s": "PASS",
+      "t": "Empty signup submit stays on page",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Signup submit handled",
+      "n": "http://localhost:3000/dashboard"
+    },
+    {
+      "s": "PASS",
+      "t": "Bookings page",
+      "n": "Booking History & Export"
+    },
+    {
+      "s": "WARN",
+      "t": "Booking detail link",
+      "n": "no /bookings/bk_ links found"
+    },
+    {
+      "s": "PASS",
+      "t": "Homepage mobile 375px",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Cars mobile",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Mobile hamburger visible",
+      "n": ""
+    },
+    {
+      "s": "WARN",
+      "t": "Mobile nav open",
+      "n": "Browse Cars not shown"
+    },
+    {
+      "s": "PASS",
+      "t": "Homepage tablet 768px",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Cars tablet",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Homepage wide 1440px",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Cars wide",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Switch Demo modal opens",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Demo modal closes via X",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "Logo → home",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /cars",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /cars/car_1",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /cars/car_2",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /cars/car_6",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /signin",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /signup",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /dashboard",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /bookings",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /owner",
+      "n": ""
+    },
+    {
+      "s": "PASS",
+      "t": "No console errors: /admin",
+      "n": ""
+    }
+  ],
+  "consoleErrors": []
+}

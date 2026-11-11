@@ -1,0 +1,361 @@
+{
+  "timestamp": "2026-10-26T05:23:39.975Z",
+  "summary": {
+    "passes": 58,
+    "fails": 1,
+    "warns": 10
+  },
+  "results": [
+    {
+      "status": "PASS",
+      "test": "Homepage title",
+      "note": "Sheggar Wheels | Addis Ababa Car Rental"
+    },
+    {
+      "status": "PASS",
+      "test": "Navbar renders",
+      "note": "2 links found"
+    },
+    {
+      "status": "PASS",
+      "test": "Hero H1 visible",
+      "note": "Sheger Wheels"
+    },
+    {
+      "status": "PASS",
+      "test": "3D spotlight card visible",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Featured Vehicles section visible",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Search form / Filter Fleet button visible",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Footer visible",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Explore Fleet CTA visible",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Spotlight car tabs clickable",
+      "note": "4 tabs"
+    },
+    {
+      "status": "PASS",
+      "test": "Explore Fleet CTA navigates to /cars",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "\"List Your Vehicle\" navigates to /signup",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Cars page heading",
+      "note": "Explore Car Catalogue"
+    },
+    {
+      "status": "PASS",
+      "test": "Car cards rendered",
+      "note": "6 cards"
+    },
+    {
+      "status": "PASS",
+      "test": "Search filter works",
+      "note": "3 results for \"Toyota\""
+    },
+    {
+      "status": "PASS",
+      "test": "Sort by price-asc works",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Sort by price-desc works",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Reset All filters button works",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail car_1 loads",
+      "note": "Toyota Corolla EX"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders on car_1",
+      "note": ""
+    },
+    {
+      "status": "WARN",
+      "test": "Map tiles on car_1",
+      "note": "tile container not visible"
+    },
+    {
+      "status": "WARN",
+      "test": "Map marker on car_1",
+      "note": "overlay pane not visible"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking form on car_1",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail car_2 loads",
+      "note": "Hyundai Tucson SUV"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders on car_2",
+      "note": ""
+    },
+    {
+      "status": "WARN",
+      "test": "Map tiles on car_2",
+      "note": "tile container not visible"
+    },
+    {
+      "status": "WARN",
+      "test": "Map marker on car_2",
+      "note": "overlay pane not visible"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking form on car_2",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail car_3 loads",
+      "note": "Toyota Vitz hatchback"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders on car_3",
+      "note": ""
+    },
+    {
+      "status": "WARN",
+      "test": "Map tiles on car_3",
+      "note": "tile container not visible"
+    },
+    {
+      "status": "WARN",
+      "test": "Map marker on car_3",
+      "note": "overlay pane not visible"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking form on car_3",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail car_4 loads",
+      "note": "Ford Ranger Double Cab"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders on car_4",
+      "note": ""
+    },
+    {
+      "status": "WARN",
+      "test": "Map tiles on car_4",
+      "note": "tile container not visible"
+    },
+    {
+      "status": "WARN",
+      "test": "Map marker on car_4",
+      "note": "overlay pane not visible"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking form on car_4",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail car_5 loads",
+      "note": "Suzuki Dzire Sedan"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders on car_5",
+      "note": ""
+    },
+    {
+      "status": "WARN",
+      "test": "Map tiles on car_5",
+      "note": "tile container not visible"
+    },
+    {
+      "status": "WARN",
+      "test": "Map marker on car_5",
+      "note": "overlay pane not visible"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking form on car_5",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Map survives car-to-car navigation and back",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Sign in page heading",
+      "note": "Demo Sign In"
+    },
+    {
+      "status": "PASS",
+      "test": "Demo sign-in buttons visible",
+      "note": "4 renter buttons"
+    },
+    {
+      "status": "PASS",
+      "test": "Sign in as Renter → redirects to /dashboard",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Dashboard loads",
+      "note": "Welcome back, Abebe Admin!"
+    },
+    {
+      "status": "PASS",
+      "test": "Booking price calculation shows after date selection",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Proceed to Checkout navigates to /checkout",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Checkout page heading visible",
+      "note": "Mock TeleBirr Checkout"
+    },
+    {
+      "status": "PASS",
+      "test": "Sign in as Owner → /owner",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Owner /cars page loads",
+      "note": "Your Car Listings"
+    },
+    {
+      "status": "PASS",
+      "test": "Sign in as Admin → /admin",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/users loads",
+      "note": "Demo accounts"
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/listings loads",
+      "note": "Listing moderation"
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/bookings loads",
+      "note": "All bookings"
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/disputes loads",
+      "note": "Dispute queue"
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/reports loads",
+      "note": "Platform reports"
+    },
+    {
+      "status": "PASS",
+      "test": "Admin /admin/announcements loads",
+      "note": "Announcements"
+    },
+    {
+      "status": "PASS",
+      "test": "Protected /dashboard",
+      "note": "URL: http://localhost:3000/signin?next=/dashboard"
+    },
+    {
+      "status": "PASS",
+      "test": "Signup page loads",
+      "note": "Create Renter Account"
+    },
+    {
+      "status": "PASS",
+      "test": "Signup form has name and email fields",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Signup empty submit handled",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Bookings page loads",
+      "note": "Booking History & Export"
+    },
+    {
+      "status": "PASS",
+      "test": "Invalid car ID shows not-found state",
+      "note": ""
+    },
+    {
+      "status": "PASS",
+      "test": "Non-existent route handled",
+      "note": "URL: http://localhost:3000/nonexistent-route"
+    },
+    {
+      "status": "PASS",
+      "test": "Car detail page survives direct refresh",
+      "note": "Toyota Vitz hatchback"
+    },
+    {
+      "status": "PASS",
+      "test": "Map renders after direct page refresh",
+      "note": ""
+    },
+    {
+      "status": "FAIL",
+      "test": "Responsive layouts",
+      "note": "context.setViewportSize is not a function"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "url": "http://localhost:3000/nonexistent-route",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ]
+}

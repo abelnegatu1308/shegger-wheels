@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title">
+  <title id="title">Vehicle photo unavailable</title>
+  <defs>
+    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#071a16"/>
+      <stop offset="1" stop-color="#132a3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#background)"/>
+  <circle cx="950" cy="160" r="250" fill="#10b981" opacity=".12"/>
+  <path d="M265 430h670l-47-125c-13-34-45-57-82-57H414c-37 0-69 23-82 57l-67 125Z" fill="#e2e8f0"/>
+  <path d="m385 328-31 84h493l-31-84c-5-14-18-23-33-23H418c-15 0-28 9-33 23Z" fill="#17382f"/>
+  <path d="M225 430h750c21 0 38 17 38 38v63H187v-63c0-21 17-38 38-38Z" fill="#10b981"/>
+  <circle cx="340" cy="527" r="67" fill="#08120f"/><circle cx="340" cy="527" r="31" fill="#cbd5e1"/>
+  <circle cx="862" cy="527" r="67" fill="#08120f"/><circle cx="862" cy="527" r="31" fill="#cbd5e1"/>
+  <text x="600" y="650" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="22" text-anchor="middle">SHEGGAR WHEELS · PHOTO UNAVAILABLE</text>
+</svg>
