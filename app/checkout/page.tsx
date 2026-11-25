@@ -25,7 +25,7 @@ export default function CheckoutPage() {
     }
     const savedDraft = readSession<CheckoutDraft | null>(STORAGE_KEYS.CHECKOUT_DRAFT, null);
     if (!savedDraft) {
-      setError('No active checkout was found. Choose a vehicle and rental dates to begin.');
+      startTransition(() => setError('No active checkout was found. Choose a vehicle and rental dates to begin.'));
       return;
     }
     const draft = savedDraft;

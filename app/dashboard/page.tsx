@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, startTransition } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { getCurrentUser, getCurrentSession, getBookings, getCars, formatETB } from '@/lib/storage';
 import { Booking, Car, User } from '@/types';
 import Navbar from '@/components/Navbar';
@@ -72,7 +73,7 @@ export default function DashboardPage() {
           {upcomingTrips.length === 0 ? (
             <div className="bg-white p-8 rounded-2xl text-center border border-slate-200 text-slate-500 text-sm">
               You have no upcoming trips right now.{' '}
-              <a href="/cars" className="text-emerald-600 font-semibold hover:underline">Browse cars</a> to book your next ride.
+              <Link href="/cars" className="text-emerald-600 font-semibold hover:underline">Browse cars</Link> to book your next ride.
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -94,12 +95,12 @@ export default function DashboardPage() {
                       </div>
                     </div>
                     <div className="pt-4 border-t border-slate-100 flex gap-2">
-                      <a
+                      <Link
                         href={`/bookings/${b.id}`}
                         className="flex-1 bg-slate-900 hover:bg-emerald-600 text-white text-center py-2 rounded-xl text-xs font-semibold transition"
                       >
                         View Receipt & Status
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -112,12 +113,12 @@ export default function DashboardPage() {
         <div className="space-y-4 pt-6">
           <div className="flex justify-between items-center">
             <h2 className="text-xl font-bold text-slate-900">Past Trip History</h2>
-            <a
+            <Link
               href="/bookings"
               className="text-emerald-600 hover:underline font-semibold text-sm"
             >
               View All Bookings & Export CSV →
-            </a>
+            </Link>
           </div>
 
           {pastTrips.length === 0 ? (
@@ -150,19 +151,19 @@ export default function DashboardPage() {
                           </span>
                         </td>
                         <td className="p-4 text-right space-x-2">
-                          <a
+                          <Link
                             href={`/bookings/${b.id}`}
                             className="text-emerald-600 hover:underline text-xs font-semibold"
                           >
                             Details
-                          </a>
+                          </Link>
                           {b.status === 'completed' && (
-                            <a
+                            <Link
                               href={`/bookings/${b.id}/review`}
                               className="text-blue-600 hover:underline text-xs font-semibold"
                             >
                               Leave Review
-                            </a>
+                            </Link>
                           )}
                         </td>
                       </tr>

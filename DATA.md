@@ -21,6 +21,7 @@ The app has no database or API. Seeded records are initialized in `localStorage`
 
 - New bookings are requests and do not imply owner approval or a real payment.
 - Dates use ISO `YYYY-MM-DD` strings and end-exclusive intervals.
+- Fresh demo seed bookings use dates relative to initialization so upcoming, active, and past trip examples remain useful over time. Existing browser data is not overwritten.
 - Requested, confirmed, in-progress, and disputed trips block overlapping dates; approval rechecks conflicts.
 - Reviews require an eligible completed booking and are limited to one per booking.
 - Demo map coordinates are seeded values; tracking steps are simulated.

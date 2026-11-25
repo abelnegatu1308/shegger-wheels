@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { startTransition, useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { getUsers, safeReturnPath, signInAsDemo } from '@/lib/storage';
+import { User } from '@/types';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Lock, AlertCircle } from 'lucide-react';
@@ -10,8 +12,11 @@ import { Lock, AlertCircle } from 'lucide-react';
 export default function SignInPage() {
   const router = useRouter();
   const [errorMsg, setErrorMsg] = useState('');
+  const [users, setUsers] = useState<User[]>([]);
 
-  const users = getUsers();
+  useEffect(() => {
+    startTransition(() => setUsers(getUsers()));
+  }, []);
 
   const handleSignIn = (userId: string, role: 'renter' | 'owner' | 'admin') => {
     const params = new URLSearchParams(window.location.search);
@@ -89,7 +94,7 @@ export default function SignInPage() {
           <div className="pt-4 border-t border-slate-100 text-center">
             <p className="text-xs text-slate-500">
               Don&apos;t have a renter account?{' '}
-              <a href="/signup" className="text-emerald-600 font-semibold hover:underline">Create Renter Account</a>
+              <Link href="/signup" className="text-emerald-600 font-semibold hover:underline">Create Renter Account</Link>
             </p>
           </div>
         </div>

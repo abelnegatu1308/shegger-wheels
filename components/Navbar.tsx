@@ -2,34 +2,20 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import {
   Car,
-  Calendar,
-  ShieldAlert,
-  User as UserIcon,
   LogOut,
-  LogIn,
   Menu,
-  X,
-  Settings,
-  TrendingUp,
-  BookOpen,
-  AlertTriangle,
-  RefreshCw,
-  Award
+  X
 } from 'lucide-react';
-import { getCurrentSession, getCurrentUser, signOut, getAnnouncements, getUsers, signInAsDemo } from '@/lib/storage';
-import { User, SessionState, Announcement } from '@/types';
+import { getCurrentSession, getCurrentUser, signOut } from '@/lib/storage';
+import { User, SessionState } from '@/types';
 
 export default function Navbar() {
   const [session, setSession] = useState<SessionState | null>(null);
   const [user, setUser] = useState<User | null>(null);
-  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
-  const [demoError, setDemoError] = useState('');
-  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,8 +23,6 @@ export default function Navbar() {
       const s = getCurrentSession();
       setSession(s);
       setUser(getCurrentUser());
-      const anns = getAnnouncements().filter(a => a.active);
-      setAnnouncements(anns);
     }
     loadData();
 
@@ -46,44 +30,8 @@ export default function Navbar() {
     return () => window.removeEventListener('sw_storage_update', loadData);
   }, [pathname]);
 
-  const allUsers = getUsers();
-  const switchDemo = (userId: string, role: 'renter' | 'owner' | 'admin', destination: string) => {
-    if (!signInAsDemo(userId, role)) {
-      setDemoError('That demo account is suspended or does not have this role.');
-      return;
-    }
-    setDemoError('');
-    setDemoModalOpen(false);
-    router.push(destination);
-  };
-
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      {/* Active Announcements Banner */}
-      {announcements.map(ann => (
-        <div key={ann.id} className="bg-amber-600 text-white text-xs py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2">
-          <Award className="w-4 h-4" />
-          <span><strong>{ann.title}:</strong> {ann.message}</span>
-        </div>
-      ))}
-
-      {/* Demo Mode Banner */}
-      <div className="bg-slate-900 text-slate-200 text-xs py-1 px-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="font-semibold text-emerald-400">DEMO MODE ACTIVE</span>
-          <span className="hidden sm:inline">— Peer-to-Peer Car Rental for Addis Ababa (No real payments or database)</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setDemoModalOpen(true)}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-0.5 rounded text-xs font-medium transition"
-          >
-            Switch Demo Account
-          </button>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-8">
@@ -131,10 +79,17 @@ export default function Navbar() {
                   <div className="text-sm font-semibold text-slate-800">{user.name}</div>
                   <div className="text-xs text-emerald-600 font-medium capitalize">Role: {session.activeRole}</div>
                 </div>
+                <Link
+                  href="/signin"
+                  className="px-2 py-2 text-xs font-medium text-slate-600 hover:text-emerald-600 transition"
+                >
+                  Switch account
+                </Link>
                 <button
                   onClick={() => signOut()}
                   className="p-2 text-slate-500 hover:text-rose-600 rounded-lg hover:bg-slate-100 transition"
                   title="Sign Out"
+                  aria-label="Sign out"
                 >
                   <LogOut className="w-5 h-5" />
                 </button>
@@ -258,78 +213,18 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          {session && user && (
+            <Link
+              href="/signin"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded-md text-sm font-medium text-emerald-700 hover:bg-emerald-50"
+            >
+              Switch account
+            </Link>
+          )}
         </div>
       )}
 
-      {/* Switch Demo Account Modal */}
-      {demoModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-          <div role="dialog" aria-modal="true" aria-labelledby="demo-account-title" className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
-            <div className="flex justify-between items-center">
-              <h3 id="demo-account-title" className="text-lg font-bold text-slate-900">Switch Demo Account</h3>
-              <button aria-label="Close demo account dialog" onClick={() => setDemoModalOpen(false)} className="text-slate-400 hover:text-slate-600">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            {demoError && <p role="alert" className="text-sm text-rose-700">{demoError}</p>}
-            <p className="text-sm text-slate-600">
-              Select one of the pre-configured demo users to instantly test Renter, Owner, or Admin capabilities:
-            </p>
-            <div className="space-y-3">
-              {allUsers.map((u) => (
-                <div key={u.id} className="border border-slate-200 rounded-xl p-3 flex flex-col gap-2 bg-slate-50">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <div className="font-semibold text-slate-800">{u.name}</div>
-                      <div className="text-xs text-slate-500">{u.email}</div>
-                    </div>
-                    <span className="text-xs uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">
-                      {u.roles.join(', ')}
-                    </span>
-                  </div>
-                  <div className="flex gap-2 pt-2 border-t border-slate-200">
-                    {u.roles.includes('renter') && (
-                      <button
-                        disabled={u.status !== 'active'}
-                        onClick={() => switchDemo(u.id, 'renter', '/dashboard')}
-                        className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs py-1.5 rounded font-medium transition"
-                      >
-                        Sign in as Renter
-                      </button>
-                    )}
-                    {u.roles.includes('owner') && (
-                      <button
-                        disabled={u.status !== 'active'}
-                        onClick={() => switchDemo(u.id, 'owner', '/owner')}
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-xs py-1.5 rounded font-medium transition"
-                      >
-                        Sign in as Owner
-                      </button>
-                    )}
-                    {u.roles.includes('admin') && (
-                      <button
-                        disabled={u.status !== 'active'}
-                        onClick={() => switchDemo(u.id, 'admin', '/admin')}
-                        className="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-xs py-1.5 rounded font-medium transition"
-                      >
-                        Sign in as Admin
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="pt-2">
-              <button
-                onClick={() => setDemoModalOpen(false)}
-                className="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm py-2 rounded-lg font-medium transition"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, startTransition, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
@@ -63,9 +63,11 @@ export default function AdminWorkspace({ section, recordId }: Props) {
       router.replace(`/signin?next=${encodeURIComponent(`/admin/${section === 'user' ? `users/${recordId}` : section === 'dispute' ? `disputes/${recordId}` : section}`)}`);
       return;
     }
-    setAuthorized(true);
-    refresh();
-    setLoaded(true);
+    startTransition(() => {
+      setAuthorized(true);
+      refresh();
+      setLoaded(true);
+    });
   }, [recordId, router, section]);
 
   const isAdmin = () => Boolean(getCurrentSession() && hasRole(getCurrentUser(), 'admin'));
@@ -80,7 +82,10 @@ export default function AdminWorkspace({ section, recordId }: Props) {
       setError('This listing is no longer pending review.');
       return;
     }
-    saveCars(getCars().map((car) => car.id === carId ? { ...car, status } : car));
+    if (!saveCars(getCars().map((car) => car.id === carId ? { ...car, status } : car))) {
+      setError('Could not update the listing. Check browser storage and try again.');
+      return;
+    }
     setError('');
     setNotice(`Listing ${status}.`);
     refresh();
@@ -101,9 +106,12 @@ export default function AdminWorkspace({ section, recordId }: Props) {
       setError('Demo account not found.');
       return;
     }
-    saveUsers(getUsers().map((user) => user.id === userId
+    if (!saveUsers(getUsers().map((user) => user.id === userId
       ? { ...user, status: user.status === 'active' ? 'suspended' : 'active' }
-      : user));
+      : user))) {
+      setError('Could not update the demo account. Check browser storage and try again.');
+      return;
+    }
     setError('');
     setNotice(`Account ${current.status === 'active' ? 'suspended' : 'reinstated'}.`);
     refresh();
@@ -142,7 +150,10 @@ export default function AdminWorkspace({ section, recordId }: Props) {
       createdAt: new Date().toISOString(),
       createdBy: session?.userId ?? '',
     };
-    saveAnnouncements([...getAnnouncements(), entry]);
+    if (!saveAnnouncements([...getAnnouncements(), entry])) {
+      setError('Could not publish the announcement. Check browser storage and try again.');
+      return;
+    }
     setAnnouncementTitle('');
     setAnnouncementMessage('');
     setError('');
@@ -155,9 +166,12 @@ export default function AdminWorkspace({ section, recordId }: Props) {
       setError('Admin access is required to change announcements.');
       return;
     }
-    saveAnnouncements(getAnnouncements().map((announcement) => announcement.id === id
+    if (!saveAnnouncements(getAnnouncements().map((announcement) => announcement.id === id
       ? { ...announcement, active: !announcement.active }
-      : announcement));
+      : announcement))) {
+      setError('Could not update the announcement. Check browser storage and try again.');
+      return;
+    }
     setError('');
     setNotice('Announcement status updated.');
     refresh();

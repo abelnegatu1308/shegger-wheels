@@ -39,7 +39,7 @@ export default function BookingsPage() {
 
   // CSV Export requirement
   const exportCSV = () => {
-    downloadCsv(`shegger_wheels_bookings_${Date.now()}.csv`, [
+    downloadCsv('shegger_wheels_bookings.csv', [
       ['Booking ID', 'Car ID', 'Start Date', 'End Date', 'Days', 'Total (ETB)', 'Payment Status', 'Status', 'Created At'],
       ...filteredBookings.map(b => [b.id, b.carId, b.startDate, b.endDate, b.days, b.total, b.paymentStatus, b.status, b.createdAt]),
     ]);

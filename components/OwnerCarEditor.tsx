@@ -26,21 +26,23 @@ export default function OwnerCarEditor({ carId, mode }: Props) {
       return;
     }
     const ownCar = getCars().find((candidate) => candidate.id === carId && candidate.ownerId === session.userId);
-    const cars = getCars();
-    if (ownCar) {
-      setCar(ownCar);
-      setForm({
-        make: ownCar.make,
-        model: ownCar.model,
-        year: String(ownCar.year),
-        pricePerDay: String(ownCar.pricePerDay),
-        neighbourhood: ownCar.neighbourhood,
-        description: ownCar.description,
-      });
-    } else {
-      setError('Not yours: this vehicle is not part of your fleet.');
-    }
-    setLoaded(true);
+    startTransition(() => {
+      if (ownCar) {
+        setCar(ownCar);
+        setForm({
+          make: ownCar.make,
+          model: ownCar.model,
+          year: String(ownCar.year),
+          pricePerDay: String(ownCar.pricePerDay),
+          neighbourhood: ownCar.neighbourhood,
+          description: ownCar.description,
+        });
+        setError('');
+      } else {
+        setError('Not yours: this vehicle is not part of your fleet.');
+      }
+      setLoaded(true);
+    });
   }, [carId, mode, router]);
 
   const updateListing = (event: React.FormEvent) => {

@@ -22,11 +22,11 @@ export default function OwnerCarBookings({ carId }: { carId: string }) {
       return;
     }
     const ownCar = getCars().find((candidate) => candidate.id === carId && candidate.ownerId === session.userId);
-    if (!ownCar) setError('Not yours: this vehicle is not part of your fleet.');
-    const cars = getCars();
+    const error = ownCar ? '' : 'Not yours: this vehicle is not part of your fleet.';
     const bookings = getBookings().filter((booking) => booking.carId === carId && booking.ownerId === session.userId);
     startTransition(() => {
       setCar(ownCar ?? null);
+      setError(error);
       setBookings(bookings);
       setLoaded(true);
     });

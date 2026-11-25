@@ -32,8 +32,10 @@ export default function OwnerDisputesPage() {
       router.replace('/signin?next=%2Fowner%2Fdisputes');
       return;
     }
-    refresh();
-    setLoaded(true);
+    startTransition(() => {
+      refresh();
+      setLoaded(true);
+    });
   }, [router]);
 
   const openDispute = (event: React.FormEvent) => {

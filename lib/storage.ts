@@ -109,6 +109,9 @@ const INITIAL_USERS: User[] = [
   },
 ];
 
+const dateOffsetFromToday = (offset: number): string =>
+  new Date(Date.now() + offset * 86_400_000).toISOString().slice(0, 10);
+
 const INITIAL_CARS: Car[] = [
   {
     id: 'car_1',
@@ -129,7 +132,7 @@ const INITIAL_CARS: Car[] = [
     ],
     description: 'Extremely clean and well-maintained Toyota Corolla EX. Perfect for city driving and comfortable trips around Addis Ababa. AC and Bluetooth fully functional.',
     status: 'approved',
-    unavailableDates: ['2026-11-01', '2026-11-02'],
+    unavailableDates: [dateOffsetFromToday(30), dateOffsetFromToday(31)],
     createdAt: '2026-01-10T10:00:00.000Z',
   },
   {
@@ -288,8 +291,8 @@ const INITIAL_BOOKINGS: Booking[] = [
     carId: 'car_1',
     renterId: 'u_renter_1',
     ownerId: 'u_owner_1',
-    startDate: '2026-10-25',
-    endDate: '2026-10-28',
+    startDate: dateOffsetFromToday(7),
+    endDate: dateOffsetFromToday(10),
     days: 3,
     pricePerDay: 2500,
     subtotal: 7500,
@@ -305,8 +308,8 @@ const INITIAL_BOOKINGS: Booking[] = [
     carId: 'car_2',
     renterId: 'u_renter_1',
     ownerId: 'u_owner_1',
-    startDate: '2026-09-10',
-    endDate: '2026-09-13',
+    startDate: dateOffsetFromToday(-30),
+    endDate: dateOffsetFromToday(-27),
     days: 3,
     pricePerDay: 4200,
     subtotal: 12600,
@@ -322,8 +325,8 @@ const INITIAL_BOOKINGS: Booking[] = [
     carId: 'car_3',
     renterId: 'u_renter_1',
     ownerId: 'u_owner_1',
-    startDate: '2026-10-30',
-    endDate: '2026-11-01',
+    startDate: dateOffsetFromToday(14),
+    endDate: dateOffsetFromToday(16),
     days: 2,
     pricePerDay: 1800,
     subtotal: 3600,
@@ -339,8 +342,8 @@ const INITIAL_BOOKINGS: Booking[] = [
     carId: 'car_5',
     renterId: 'u_renter_1',
     ownerId: 'u_owner_2',
-    startDate: '2026-10-18',
-    endDate: '2026-10-20',
+    startDate: dateOffsetFromToday(-15),
+    endDate: dateOffsetFromToday(-13),
     days: 2,
     pricePerDay: 2000,
     subtotal: 4000,
@@ -356,8 +359,8 @@ const INITIAL_BOOKINGS: Booking[] = [
     carId: 'car_8',
     renterId: 'u_renter_1',
     ownerId: 'u_owner_2',
-    startDate: '2026-10-22',
-    endDate: '2026-10-24',
+    startDate: dateOffsetFromToday(-1),
+    endDate: dateOffsetFromToday(1),
     days: 2,
     pricePerDay: 7500,
     subtotal: 15000,
